@@ -1,38 +1,34 @@
 import java.util.*;
-public class Main{
-public static void main(String [] args){
-String test="Aa........";
-count(test);
+ class Product
+{ int p_code,price;
+  String p_name;
+  Product(int x,String str,int p)
+ {
+     p_code=x;
+ p_name=str;
+   price=p;
 }
-public static void count(String x)
-{
- char [] ch=x.toCharArray();
- int letter=0;
- int Space=0;
-  int num=0;
-int other=0;
-for(int i=0;i<x.length();i++)
-{
-if(Character.isLetter(ch[i]))
-{
-letter++;
 }
-else if(Character.isDigit(ch[i]))
+public class Main
 {
-num++;
+ public static void main(String args[])
+{
+  Product obj1=new Product(1,"Pencil",50);
+   Product obj2=new Product(2,"Pen",70);
+   Product obj3=new Product(3,"book",40);
+if(obj1.price>obj2.price && obj1.price>obj3.price)
+{
+System.out.println("The Highest Priced Product Is:"+obj1.p_name);
 }
-else if(Character.isSpaceChar(ch[i]))
+else if(obj2.price>obj1.price && obj2.price>obj3.price)
 {
-Space++;
+
+ System.out.println("The Highest Priced Product Is:"+obj2.p_name);
 }
 else
 {
-other++;
+
+  System.out.println("The Highest Priced Product Is:"+obj3.p_name);
 }
-}
-System.out.println("The String is:.......");
-System.out.println("letter:"+letter);
-System.out.println("number:"+num);
-System.out.println("Other:"+other);
 }
 }
